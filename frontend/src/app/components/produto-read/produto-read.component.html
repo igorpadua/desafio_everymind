@@ -1,0 +1,25 @@
+<a class="btn btn-primary" routerLink="/novo">Criar</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Codigo</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let produto of produtos">
+    <td>{{produto.id}}</td>
+    <td>{{produto.nome}}</td>
+    <td>{{produto.codigo}}</td>
+    <td>{{produto.descricao}}</td>
+    <td>{{produto.preco}}</td>
+    <td><button class="btn btn-primary">Editar</button></td>
+    <td><button class="btn btn-danger" (click)="excluir(produto)">Excluir</button></td>
+  </tr>
+  </tbody>
+</table>

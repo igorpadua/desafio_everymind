@@ -1,0 +1,25 @@
+<div>
+  <h1>Criar Produto</h1>
+  <form>
+    <div class="mb=3">
+      <label class="form-label">Nome</label>
+      <input class="form-control" placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
+    </div>
+
+    <div class="mb=3">
+      <label class="form-label">codigo</label>
+      <input class="form-control" placeholder="codigo" [(ngModel)]="produto.codigo" name="codigo" type="number">
+    </div>
+
+    <div class="mb=3">
+      <label class="form-label">Quantidade</label>
+      <input class="form-control" placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao">
+    </div>
+
+    <div class="mb=3">
+      <label class="form-label">Preço</label>
+      <input class="form-control" placeholder="Preço" [(ngModel)]="produto.preco" name="preco" type="number">
+    </div>
+  </form>
+  <button class="btn btn-primary" (click)="criarProduto()">Criar</button>
+</div>

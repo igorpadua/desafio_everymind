@@ -1,7 +1,7 @@
-package com.igor.desafio.controller
+package com.igor.controller
 
-import com.igor.desafio.model.Produto
-import com.igor.desafio.service.ProdutoService
+import com.igor.model.Produto
+import com.igor.service.ProdutoService
 import groovy.transform.TypeChecked
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
@@ -33,9 +33,9 @@ class ProdutoController {
         return produtoService.salvar(produto)
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    Produto buscaPorId(@PathVariable Long id) {
+    Produto buscaPorId(@PathVariable Integer id) {
         return produtoService.buscarPorId(id)
                 .orElseThrow( () ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado")
@@ -48,21 +48,21 @@ class ProdutoController {
         return produtoService.buscarTodas()
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleta(@PathVariable Long id) {
+    void deleta(@PathVariable Integer id) {
         produtoService.buscarPorId(id)
-        .map { produto ->
-            produtoService.deletar(produto)
-            return produto
-        }.orElseThrow( () ->
-            new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado")
+                .map { produto ->
+                    produtoService.deletar(produto)
+                    return Void.TYPE
+                }.orElseThrow( () ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado")
         )
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    Produto atualiza(@PathVariable Long id, @RequestBody @Valid Produto produto) {
+    Produto atualiza(@PathVariable Integer id, @RequestBody @Valid Produto produto) {
         produtoService.buscarPorId(id)
         .map { produtoExistente ->
             produto.id = produtoExistente.id

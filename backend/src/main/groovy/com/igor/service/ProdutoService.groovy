@@ -1,10 +1,10 @@
-package com.igor.desafio.service
+package com.igor.service
 
-import com.igor.desafio.model.Produto
-import com.igor.desafio.repository.ProdutoRepository
-import jakarta.transaction.Transactional
+import com.igor.model.Produto
+import com.igor.repository.ProdutoRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class ProdutoService {
@@ -16,12 +16,12 @@ class ProdutoService {
         return produtoRepository.save(produto)
     }
 
-    @Transactional
-    Optional<Produto> buscarPorId(Long id) {
+    @Transactional(readOnly = true)
+    Optional<Produto> buscarPorId(Integer id) {
         return produtoRepository.findById(id)
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     List<Produto> buscarTodas() {
         return produtoRepository.findAll()
     }

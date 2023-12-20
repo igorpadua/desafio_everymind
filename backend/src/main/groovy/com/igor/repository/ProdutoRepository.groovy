@@ -1,6 +1,6 @@
-package com.igor.desafio.repository
+package com.igor.repository
 
-import com.igor.desafio.model.Produto
+import com.igor.model.Produto
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface ProdutoRepository extends JpaRepository<Produto, Long> {

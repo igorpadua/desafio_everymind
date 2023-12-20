@@ -1,4 +1,4 @@
-package com.igor.desafio
+package com.igor
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

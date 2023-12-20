@@ -1,4 +1,4 @@
-package com.igor.desafio.model
+package com.igor.model
 
 import groovy.transform.Canonical
 import jakarta.persistence.Entity
@@ -11,7 +11,7 @@ import jakarta.persistence.Id
 class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id
+    Integer id
     String nome
     Integer codigo
     String descricao

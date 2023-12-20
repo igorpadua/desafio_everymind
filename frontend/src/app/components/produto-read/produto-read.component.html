@@ -1,4 +1,7 @@
-<a class="btn btn-primary" routerLink="/novo">Criar</a>
+<a class="btn btn-primary" routerLink="/novo">
+  <i class="bi bi-plus-square"></i>
+  Criar Produto
+</a>
 <table class="table">
   <thead>
     <tr>
@@ -18,8 +21,16 @@
     <td>{{produto.codigo}}</td>
     <td>{{produto.descricao}}</td>
     <td>{{produto.preco}}</td>
-    <td><a class="btn btn-primary" routerLink="/editar/{{produto.id}}">Editar</a></td>
-    <td><button class="btn btn-danger" (click)="excluir(produto)">Excluir</button></td>
+    <td>
+      <a class="btn btn-secondary" routerLink="/editar/{{produto.id}}">
+        <i class="bi bi-pencil-square"></i>
+      </a>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="excluir(produto)">
+        <i class="bi bi-trash"></i>
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>

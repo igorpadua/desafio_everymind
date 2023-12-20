@@ -1,4 +1,4 @@
-<div>
+<div class="padding-padrao">
   <h1>Criar Produto</h1>
   <form>
     <div class="mb=3">
@@ -21,5 +21,6 @@
       <input class="form-control" placeholder="Preço" [(ngModel)]="produto.preco" name="preco" type="number">
     </div>
   </form>
-  <button class="btn btn-primary" (click)="criarProduto()">Criar</button>
+  <button class="btn btn-primary mt-4" (click)="criarProduto()">Criar</button>
+  <button class="btn btn-danger mt-4 m-auto" (click)="cancelar()">Cancelar</button>
 </div>

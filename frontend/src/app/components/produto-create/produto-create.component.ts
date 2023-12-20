@@ -31,4 +31,8 @@ export class ProdutoCreateComponent {
     })
     this.router.navigate(['/']);
   }
+
+  cancelar() {
+    this.router.navigate(['/']);
+  }
 }

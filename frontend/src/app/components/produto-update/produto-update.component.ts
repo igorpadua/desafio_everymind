@@ -40,4 +40,8 @@ export class ProdutoUpdateComponent implements OnInit {
     })
     this.router.navigate(['/']);
   }
+
+  cancel() {
+    this.router.navigate(['/']);
+  }
 }
